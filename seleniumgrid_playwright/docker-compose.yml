@@ -1,0 +1,33 @@
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:4.41.0
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    environment:
+      - JAVA_OPTS=-Djdk.httpclient.websocket.intermediateBufferSize=3000000
+      - SE_EVENT_BUS_HOST=selenium-hub
+    networks:
+      - grid-network
+
+  chrome:
+    image: selenium/node-chrome:145.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - JAVA_OPTS=-Djdk.httpclient.websocket.intermediateBufferSize=3000000
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_SESSION_TIMEOUT=120
+      - SE_NODE_MAX_SESSIONS=4
+
+    networks:
+      - grid-network
+
+networks:
+  grid-network:
+    driver: bridge

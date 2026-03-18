@@ -1,0 +1,36 @@
+### --- GENERAL --- ###
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+
+### --- PYTHON --- ###
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+### --- JAVASCRIPT / NODE --- ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+.next/
+
+### --- GO --- ###
+bin/
+main
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+.test/
