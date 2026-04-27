@@ -45,7 +45,6 @@ uv venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 uv pip install -r requirements.txt
-playwright install chromium
 
 python requests_example.py  # Using SOCKS5h
 python pw_example.py        # Using SOCKS5
