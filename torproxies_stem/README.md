@@ -7,7 +7,7 @@ This project demonstrates how to perform anonymous web scraping using **Python**
 ## 📺 Video Tutorial
 
 I've created a full walkthrough explaining the architecture or the proxy configuration differences as well as using it with requests and playwright.
-👉 [Watch the Video on YouTube](https://youtu.be/YOUR_VIDEO_ID)
+👉 [Watch the Video on YouTube](https://youtu.be/lxQlpUv0LQE?si=BzD7I3TiqF2Yij3i)
 
 ---
 
