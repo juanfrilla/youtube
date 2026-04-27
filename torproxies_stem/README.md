@@ -1,4 +1,4 @@
-# 🚀 Anonymous Web Scraping: Playwright & Requests via Tor
+# 🚀 Build a Tor Proxies Infrastructure (for scraping with Playwright & Requests)
 
 This project demonstrates how to perform anonymous web scraping using **Python** with two different approaches: **Playwright** (for dynamic, JS-heavy sites) and **Requests** (for fast, headful API/HTML scraping). Both methods are routed through the **Tor Network** using Docker.
 
