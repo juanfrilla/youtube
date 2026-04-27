@@ -18,7 +18,7 @@ On my channel, I share my journey as a Software Engineer, focusing on:
 | # | Project Name | Code Link |
 |---|--------------|-----------|
 | 01 | **How to connect Selenium grid with Playwright for scraping using Python, JS and Go.** | [View Folder](./seleniumgrid_playwright) |
-| -- | Coming Soon... | -- |
+| 02 | **Anonymized Web Scraping: Rotating Tor Proxies (using requests and playwright)** | [View Folder](./torproxies_stem) |
 
 ---
 

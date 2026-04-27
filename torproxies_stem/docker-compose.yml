@@ -1,0 +1,92 @@
+version: "3.8"
+
+services:
+  tor_master:
+    image: dperson/torproxy
+    environment:
+      - PASSWORD=alpha
+    ports:
+      - "9050:9050"
+      - "9051:9051"
+    networks:
+      - scraping_net
+    restart: always
+
+  tor_gb:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=GB
+      - PASSWORD=alpha
+    ports:
+      - "9053:9050"
+      - "9061:9051"
+    restart: always
+    networks:
+      - scraping_net
+
+  tor_de:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=DE
+      - PASSWORD=alpha
+    ports:
+      - "9054:9050"
+      - "9071:9051"
+    restart: always
+    networks:
+      - scraping_net
+
+  tor_jp:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=JP
+      - PASSWORD=alpha
+    ports:
+      - "9055:9050"
+      - "9081:9051"
+    restart: always
+    networks:
+      - scraping_net
+  tor_us:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=US
+      - PASSWORD=alpha
+    ports:
+      - "9056:9050"
+      - "9091:9051"
+    restart: always
+    networks:
+      - scraping_net
+
+  selenium-hub:
+    image: selenium/hub:4.41.0
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    environment:
+      - JAVA_OPTS=-Djdk.httpclient.websocket.intermediateBufferSize=3000000
+      - SE_EVENT_BUS_HOST=selenium-hub
+    networks:
+      - scraping_net
+
+  chrome:
+    image: selenium/node-chrome:145.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - JAVA_OPTS=-Djdk.httpclient.websocket.intermediateBufferSize=3000000
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_SESSION_TIMEOUT=120
+      - SE_NODE_MAX_SESSIONS=4
+
+    networks:
+      - scraping_net
+
+networks:
+  scraping_net:
+    driver: bridge
