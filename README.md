@@ -5,9 +5,7 @@ Welcome to my official YouTube repository! Here you will find all the source cod
 ## 📺 About the Channel
 On my channel, I share my journey as a Software Engineer, focusing on:
 * **Advanced Web Scraping** (Playwright, Selenium, Anti-detect).
-* **Infrastructure & DevOps** (Docker, Selenium Grid).
 * **Reverse Engineering** & Deobfuscation.
-* **Mindset & Motivation** for developers.
 
 👉 **[Subscribe to the Channel](https://www.youtube.com/@jfmozaga)**
 
